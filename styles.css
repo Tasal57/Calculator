@@ -50,3 +50,24 @@ button {
 button:hover {
   background: #d0d0d0;
 }
+
+button.operator {
+  background: #f9a825;
+  color: white;
+}
+
+button.operator:hover {
+  background: #f57f17;
+}
+
+button.equal {
+  background: #4caf50;
+  color: white;
+  grid-column: span 2;
+}
+
+button.clear {
+  background: #e53935;
+  color: white;
+  grid-column: span 2;
+}
