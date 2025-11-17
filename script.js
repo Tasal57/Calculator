@@ -1,20 +1,37 @@
-function add(a, b) {
-    return a + b;
+const display = document.getElementById('display');
+const buttons = document.querySelectorAll('button');
 
-}
 
-function subtract(a, b) {
-    return a - b;
-}
 
-function Multiply(a, b) {
-    return a * b;
-}
+let currentInput = '';
+let previousInput = '';
+let operator = '';
 
-function Divide(a, b) {
-    if (b == 0) {
-        return "error, you cant divide by 0";
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const value = button.textContent;
+
+    // Clear button
+    if (button.classList.contains('clear')) {
+      currentInput = '';
+      previousInput = '';
+      operator = '';
+      display.textContent = '0';
+      return;
     }
+
+
+     // Operator buttons
+    if (button.classList.contains('operator')) {
+      if (currentInput === '') return; // ignore if no number entered yet
+      operator = value;
+      previousInput = currentInput;
+      currentInput = '';
+      return;
+    }
+
+
     
-    return a / b
-}
+  });
+});
